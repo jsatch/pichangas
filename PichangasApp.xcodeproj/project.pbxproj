@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF3151A31C1BA763001F8F20 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3151A01C1BA763001F8F20 /* Bolts.framework */; };
-		CF3151A41C1BA763001F8F20 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3151A11C1BA763001F8F20 /* FBSDKCoreKit.framework */; };
-		CF3151A51C1BA763001F8F20 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3151A21C1BA763001F8F20 /* FBSDKLoginKit.framework */; };
+		5F31B6BD1C3B06F8004A2A92 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F31B6BC1C3B06F8004A2A92 /* Firebase.framework */; };
+		5F31B6BF1C3B078B004A2A92 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F31B6BE1C3B078B004A2A92 /* libc++.tbd */; };
+		5F31B6C11C3B079B004A2A92 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F31B6C01C3B079B004A2A92 /* libicucore.tbd */; };
+		5F31B6C31C3B07A5004A2A92 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F31B6C21C3B07A5004A2A92 /* CFNetwork.framework */; };
+		5F31B6C51C3B07B1004A2A92 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F31B6C41C3B07B1004A2A92 /* Security.framework */; };
+		5F31B6C71C3B07BC004A2A92 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F31B6C61C3B07BC004A2A92 /* SystemConfiguration.framework */; };
+		5FB3B0AE1C39E4F200B05B8C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB3B0AB1C39E4F200B05B8C /* Bolts.framework */; };
+		5FB3B0AF1C39E4F200B05B8C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB3B0AC1C39E4F200B05B8C /* FBSDKCoreKit.framework */; };
+		5FB3B0B01C39E4F200B05B8C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB3B0AD1C39E4F200B05B8C /* FBSDKLoginKit.framework */; };
+		5FB3B0B51C3A038800B05B8C /* PichanguerosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB3B0B41C3A038800B05B8C /* PichanguerosCollectionViewCell.swift */; };
+		5FB3B0B71C3A04E300B05B8C /* PichanguerosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB3B0B61C3A04E300B05B8C /* PichanguerosCollectionViewController.swift */; };
+		5FB3B0B91C3A058D00B05B8C /* Pichanguero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB3B0B81C3A058D00B05B8C /* Pichanguero.swift */; };
 		CF3151A71C1BF850001F8F20 /* PichangasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3151A61C1BF850001F8F20 /* PichangasViewController.swift */; };
 		CF3151AC1C1C03EA001F8F20 /* PichangaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3151AB1C1C03EA001F8F20 /* PichangaTableViewCell.swift */; };
 		CF52C9461C1B83D700354DFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52C9451C1B83D700354DFC /* AppDelegate.swift */; };
@@ -18,15 +27,22 @@
 		CF52C9501C1B83D700354DFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF52C94E1C1B83D700354DFC /* LaunchScreen.storyboard */; };
 		CF52C9591C1B848600354DFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52C9581C1B848600354DFC /* LoginViewController.swift */; };
 		CF8A6E981C1FD2EF00E0200B /* Pichanga.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8A6E971C1FD2EF00E0200B /* Pichanga.swift */; };
-		CFA4C8A61C20AD57007D833A /* ConfigurarPichangaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4C8A51C20AD57007D833A /* ConfigurarPichangaViewController.swift */; };
-		CFA4C8A81C20B311007D833A /* FechaHoraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA4C8A71C20B311007D833A /* FechaHoraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F31B6BC1C3B06F8004A2A92 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../../../Librerias/Firebase.framework; sourceTree = "<group>"; };
+		5F31B6BE1C3B078B004A2A92 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		5F31B6C01C3B079B004A2A92 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		5F31B6C21C3B07A5004A2A92 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5F31B6C41C3B07B1004A2A92 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5F31B6C61C3B07BC004A2A92 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5FB3B0AB1C39E4F200B05B8C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../Librerias/FacebookSDKs/Bolts.framework; sourceTree = "<group>"; };
+		5FB3B0AC1C39E4F200B05B8C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Librerias/FacebookSDKs/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		5FB3B0AD1C39E4F200B05B8C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Librerias/FacebookSDKs/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		5FB3B0B41C3A038800B05B8C /* PichanguerosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PichanguerosCollectionViewCell.swift; path = Cells/PichanguerosCollectionViewCell.swift; sourceTree = "<group>"; };
+		5FB3B0B61C3A04E300B05B8C /* PichanguerosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PichanguerosCollectionViewController.swift; sourceTree = "<group>"; };
+		5FB3B0B81C3A058D00B05B8C /* Pichanguero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pichanguero.swift; sourceTree = "<group>"; };
 		CF31519B1C1BA23A001F8F20 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		CF3151A01C1BA763001F8F20 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
-		CF3151A11C1BA763001F8F20 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		CF3151A21C1BA763001F8F20 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		CF3151A61C1BF850001F8F20 /* PichangasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PichangasViewController.swift; sourceTree = "<group>"; };
 		CF3151AB1C1C03EA001F8F20 /* PichangaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PichangaTableViewCell.swift; sourceTree = "<group>"; };
 		CF52C9421C1B83D700354DFC /* PichangasApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PichangasApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,8 +53,6 @@
 		CF52C9511C1B83D700354DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF52C9581C1B848600354DFC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CF8A6E971C1FD2EF00E0200B /* Pichanga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pichanga.swift; path = Model/Pichanga.swift; sourceTree = "<group>"; };
-		CFA4C8A51C20AD57007D833A /* ConfigurarPichangaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurarPichangaViewController.swift; sourceTree = "<group>"; };
-		CFA4C8A71C20B311007D833A /* FechaHoraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FechaHoraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,9 +60,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF3151A31C1BA763001F8F20 /* Bolts.framework in Frameworks */,
-				CF3151A41C1BA763001F8F20 /* FBSDKCoreKit.framework in Frameworks */,
-				CF3151A51C1BA763001F8F20 /* FBSDKLoginKit.framework in Frameworks */,
+				5F31B6C71C3B07BC004A2A92 /* SystemConfiguration.framework in Frameworks */,
+				5F31B6C51C3B07B1004A2A92 /* Security.framework in Frameworks */,
+				5F31B6C31C3B07A5004A2A92 /* CFNetwork.framework in Frameworks */,
+				5F31B6C11C3B079B004A2A92 /* libicucore.tbd in Frameworks */,
+				5F31B6BF1C3B078B004A2A92 /* libc++.tbd in Frameworks */,
+				5FB3B0AE1C39E4F200B05B8C /* Bolts.framework in Frameworks */,
+				5FB3B0AF1C39E4F200B05B8C /* FBSDKCoreKit.framework in Frameworks */,
+				5FB3B0B01C39E4F200B05B8C /* FBSDKLoginKit.framework in Frameworks */,
+				5F31B6BD1C3B06F8004A2A92 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				CF3151AB1C1C03EA001F8F20 /* PichangaTableViewCell.swift */,
+				5FB3B0B41C3A038800B05B8C /* PichanguerosCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -66,9 +87,15 @@
 		CF3161491C1B8A04001030F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CF3151A01C1BA763001F8F20 /* Bolts.framework */,
-				CF3151A11C1BA763001F8F20 /* FBSDKCoreKit.framework */,
-				CF3151A21C1BA763001F8F20 /* FBSDKLoginKit.framework */,
+				5F31B6C61C3B07BC004A2A92 /* SystemConfiguration.framework */,
+				5F31B6C41C3B07B1004A2A92 /* Security.framework */,
+				5F31B6C21C3B07A5004A2A92 /* CFNetwork.framework */,
+				5F31B6C01C3B079B004A2A92 /* libicucore.tbd */,
+				5F31B6BE1C3B078B004A2A92 /* libc++.tbd */,
+				5F31B6BC1C3B06F8004A2A92 /* Firebase.framework */,
+				5FB3B0AB1C39E4F200B05B8C /* Bolts.framework */,
+				5FB3B0AC1C39E4F200B05B8C /* FBSDKCoreKit.framework */,
+				5FB3B0AD1C39E4F200B05B8C /* FBSDKLoginKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -96,12 +123,11 @@
 				CF52C9491C1B83D700354DFC /* Main.storyboard */,
 				CF52C9581C1B848600354DFC /* LoginViewController.swift */,
 				CF3151A61C1BF850001F8F20 /* PichangasViewController.swift */,
-				CFA4C8A51C20AD57007D833A /* ConfigurarPichangaViewController.swift */,
+				5FB3B0B61C3A04E300B05B8C /* PichanguerosCollectionViewController.swift */,
 				CF31519B1C1BA23A001F8F20 /* Bridging-Header.h */,
 				CF3151AA1C1C03B5001F8F20 /* Cells */,
 				CF8A6E961C1FD2C700E0200B /* Model */,
 				CF52C9571C1B83EC00354DFC /* Supporting Files */,
-				CFA4C8A71C20B311007D833A /* FechaHoraViewController.swift */,
 			);
 			path = PichangasApp;
 			sourceTree = "<group>";
@@ -121,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				CF8A6E971C1FD2EF00E0200B /* Pichanga.swift */,
+				5FB3B0B81C3A058D00B05B8C /* Pichanguero.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -196,10 +223,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFA4C8A81C20B311007D833A /* FechaHoraViewController.swift in Sources */,
-				CFA4C8A61C20AD57007D833A /* ConfigurarPichangaViewController.swift in Sources */,
 				CF3151AC1C1C03EA001F8F20 /* PichangaTableViewCell.swift in Sources */,
 				CF8A6E981C1FD2EF00E0200B /* Pichanga.swift in Sources */,
+				5FB3B0B91C3A058D00B05B8C /* Pichanguero.swift in Sources */,
+				5FB3B0B51C3A038800B05B8C /* PichanguerosCollectionViewCell.swift in Sources */,
+				5FB3B0B71C3A04E300B05B8C /* PichanguerosCollectionViewController.swift in Sources */,
 				CF52C9591C1B848600354DFC /* LoginViewController.swift in Sources */,
 				CF52C9461C1B83D700354DFC /* AppDelegate.swift in Sources */,
 				CF3151A71C1BF850001F8F20 /* PichangasViewController.swift in Sources */,
@@ -317,7 +345,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = /Users/hernan/Documents/FacebookSDK;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/hernan/development/ios/Librerias/FacebookSDKs,
+					/Users/hernan/development/ios/Librerias,
+				);
 				INFOPLIST_FILE = PichangasApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jsatch.PichangasApp;
@@ -330,7 +361,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = /Users/hernan/Documents/FacebookSDK;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Users/hernan/development/ios/Librerias/FacebookSDKs,
+					/Users/hernan/development/ios/Librerias,
+				);
 				INFOPLIST_FILE = PichangasApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jsatch.PichangasApp;

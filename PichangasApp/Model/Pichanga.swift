@@ -9,12 +9,12 @@
 import Foundation
 
 class Pichanga {
-    var id : Int
+    var id : String
     var nombre : String
     var fecha : String
     var urlImagen : String?
     
-    init(id : Int, nombrePichanga nombre : String , fechaPichanga fecha : String, urlFotoPichanga urlImagen : String?){
+    init(id : String, nombrePichanga nombre : String , fechaPichanga fecha : String, urlFotoPichanga urlImagen : String?){
         self.id = id
         self.nombre = nombre
         self.fecha = fecha

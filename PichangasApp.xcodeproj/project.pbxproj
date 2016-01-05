@@ -13,6 +13,7 @@
 		5F31B6C31C3B07A5004A2A92 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F31B6C21C3B07A5004A2A92 /* CFNetwork.framework */; };
 		5F31B6C51C3B07B1004A2A92 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F31B6C41C3B07B1004A2A92 /* Security.framework */; };
 		5F31B6C71C3B07BC004A2A92 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F31B6C61C3B07BC004A2A92 /* SystemConfiguration.framework */; };
+		5F31B6CB1C3B865A004A2A92 /* FechasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F31B6CA1C3B865A004A2A92 /* FechasViewController.swift */; };
 		5FB3B0AE1C39E4F200B05B8C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB3B0AB1C39E4F200B05B8C /* Bolts.framework */; };
 		5FB3B0AF1C39E4F200B05B8C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB3B0AC1C39E4F200B05B8C /* FBSDKCoreKit.framework */; };
 		5FB3B0B01C39E4F200B05B8C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB3B0AD1C39E4F200B05B8C /* FBSDKLoginKit.framework */; };
@@ -36,6 +37,7 @@
 		5F31B6C21C3B07A5004A2A92 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5F31B6C41C3B07B1004A2A92 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5F31B6C61C3B07BC004A2A92 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5F31B6CA1C3B865A004A2A92 /* FechasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FechasViewController.swift; sourceTree = "<group>"; };
 		5FB3B0AB1C39E4F200B05B8C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../Librerias/FacebookSDKs/Bolts.framework; sourceTree = "<group>"; };
 		5FB3B0AC1C39E4F200B05B8C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Librerias/FacebookSDKs/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		5FB3B0AD1C39E4F200B05B8C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Librerias/FacebookSDKs/FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				CF52C9581C1B848600354DFC /* LoginViewController.swift */,
 				CF3151A61C1BF850001F8F20 /* PichangasViewController.swift */,
 				5FB3B0B61C3A04E300B05B8C /* PichanguerosCollectionViewController.swift */,
+				5F31B6CA1C3B865A004A2A92 /* FechasViewController.swift */,
 				CF31519B1C1BA23A001F8F20 /* Bridging-Header.h */,
 				CF3151AA1C1C03B5001F8F20 /* Cells */,
 				CF8A6E961C1FD2C700E0200B /* Model */,
@@ -228,6 +231,7 @@
 				5FB3B0B91C3A058D00B05B8C /* Pichanguero.swift in Sources */,
 				5FB3B0B51C3A038800B05B8C /* PichanguerosCollectionViewCell.swift in Sources */,
 				5FB3B0B71C3A04E300B05B8C /* PichanguerosCollectionViewController.swift in Sources */,
+				5F31B6CB1C3B865A004A2A92 /* FechasViewController.swift in Sources */,
 				CF52C9591C1B848600354DFC /* LoginViewController.swift in Sources */,
 				CF52C9461C1B83D700354DFC /* AppDelegate.swift in Sources */,
 				CF3151A71C1BF850001F8F20 /* PichangasViewController.swift in Sources */,

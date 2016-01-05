@@ -238,7 +238,7 @@
                     <navigationItem key="navigationItem" title="Pichangas" id="0DN-zy-lbx"/>
                     <connections>
                         <outlet property="tviPichangas" destination="1fg-u0-ERZ" id="LVa-Z7-jxW"/>
-                        <segue destination="ZJc-Ha-YFH" kind="show" identifier="show iniciar" id="CLg-KF-5ro"/>
+                        <segue destination="ZJc-Ha-YFH" kind="show" identifier="show fechas" id="CLg-KF-5ro"/>
                         <segue destination="GO2-JT-EiB" kind="show" identifier="show configurar" id="HAE-8s-Vkp"/>
                     </connections>
                 </viewController>
@@ -322,10 +322,10 @@
             </objects>
             <point key="canvasLocation" x="3543" y="49"/>
         </scene>
-        <!--View Controller-->
+        <!--Fechas View Controller-->
         <scene sceneID="p49-vW-FWK">
             <objects>
-                <viewController id="ZJc-Ha-YFH" sceneMemberID="viewController">
+                <viewController id="ZJc-Ha-YFH" customClass="FechasViewController" customModule="PichangasApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OOf-Ua-bou"/>
                         <viewControllerLayoutGuide type="bottom" id="5as-9q-g8Z"/>
@@ -334,16 +334,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qgq-hq-fOP">
-                                <rect key="frame" x="161" y="72" width="279" height="29"/>
-                                <segments>
-                                    <segment title="Equipo A"/>
-                                    <segment title="Equipo B"/>
-                                </segments>
-                            </segmentedControl>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FmW-pY-aMS">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tot-RN-8GR">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tot-RN-8GR" firstAttribute="centerX" secondItem="FmW-pY-aMS" secondAttribute="centerX" id="EiO-nC-efn"/>
+                            <constraint firstItem="Tot-RN-8GR" firstAttribute="top" secondItem="OOf-Ua-bou" secondAttribute="bottom" id="HzI-cQ-icy"/>
+                            <constraint firstItem="FmW-pY-aMS" firstAttribute="centerX" secondItem="NLv-Ie-z6t" secondAttribute="centerX" id="Mr9-zs-R6P"/>
+                            <constraint firstItem="Tot-RN-8GR" firstAttribute="leading" secondItem="NLv-Ie-z6t" secondAttribute="leading" id="mQe-9K-zkD"/>
+                            <constraint firstItem="Tot-RN-8GR" firstAttribute="bottom" secondItem="5as-9q-g8Z" secondAttribute="top" id="mXX-x2-b1R"/>
+                            <constraint firstItem="FmW-pY-aMS" firstAttribute="centerY" secondItem="NLv-Ie-z6t" secondAttribute="centerY" id="puT-yU-yPt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="spinner" destination="FmW-pY-aMS" id="joL-Lk-Vww"/>
+                        <outlet property="tviFechas" destination="Tot-RN-8GR" id="5OK-Vf-NAy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIq-Sk-HPf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

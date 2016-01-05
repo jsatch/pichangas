@@ -10,9 +10,9 @@ import UIKit
 
 class PichangasViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
     
-    // MARK: Propertie
+    // MARK: Properties
     var pichangas = [Pichanga]()
-    
+    var selectedPichanga : Pichanga?
 
     @IBOutlet weak var tviPichangas: UITableView!{
         didSet{
@@ -25,12 +25,10 @@ class PichangasViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{
@@ -61,10 +59,25 @@ class PichangasViewController: UIViewController, UITableViewDataSource, UITableV
     
     
     func cargarPichangas(){
-        pichangas.append(Pichanga(id : 1, nombrePichanga: "La pichanga del pueblo", fechaPichanga: "20/12/2015", urlFotoPichanga: nil))
-        pichangas.append(Pichanga(id : 2, nombrePichanga: "La pichanga del cole", fechaPichanga: "21/12/2015", urlFotoPichanga: nil))
-        pichangas.append(Pichanga(id : 3, nombrePichanga: "La pichanga de la universidad", fechaPichanga: "22/12/2015", urlFotoPichanga: nil))
-        pichangas.append(Pichanga(id : 4, nombrePichanga: "La pichanga de la gente", fechaPichanga: "23/12/2015", urlFotoPichanga: nil))
+        let ref = Firebase(url:"https://pichangas.firebaseio.com/pichangas")
+        
+        ref.observeEventType(.Value, withBlock: { snapshot in
+            for pichanga in snapshot.children{
+                self.pichangas.append(
+                    Pichanga(
+                        id: pichanga.key!!,
+                        nombrePichanga: pichanga.value!!["nombre"]!! as! String,
+                        fechaPichanga: pichanga.value!!["proxima"]!! as! String,
+                        urlFotoPichanga: nil
+                    )
+                )
+            }
+            
+            self.tviPichangas.reloadData()
+            
+        }, withCancelBlock: { error in
+            print(error.description)
+        })
     }
     
     func onIniciarTap(gesture : UITapGestureRecognizer){
@@ -74,7 +87,8 @@ class PichangasViewController: UIViewController, UITableViewDataSource, UITableV
         if let celda = viewCell as? PichangaTableViewCell{
             if let pichangaId = celda.pichanga?.id {
                 print("Se eligio la pichanga con id \(pichangaId)")
-                performSegueWithIdentifier("show iniciar", sender: self)
+                self.selectedPichanga = celda.pichanga
+                performSegueWithIdentifier("show fechas", sender: self)
             }else{
                 print("error")
             }
@@ -89,11 +103,34 @@ class PichangasViewController: UIViewController, UITableViewDataSource, UITableV
         if let celda = viewCell as? PichangaTableViewCell{
             if let pichangaId = celda.pichanga?.id {
                 print("Configurar. Se eligio la pichanga con id \(pichangaId)")
+                self.selectedPichanga = celda.pichanga
                 performSegueWithIdentifier("show configurar", sender: self)
             }else{
                 print("error")
             }
         }
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier{
+            switch identifier{
+                case "show configurar":
+                    if selectedPichanga != nil{
+                        let pichanguerosvc = segue.destinationViewController as! PichanguerosCollectionViewController
+                        pichanguerosvc.pichanga = selectedPichanga!
+                    }
+                
+                case "show fechas":
+                    if selectedPichanga != nil{
+                        let fechasvc = segue.destinationViewController as! FechasViewController
+                        fechasvc.pichanga = selectedPichanga!
+                    }
+                default:
+                break
+            }
+        }
+        
         
     }
 

@@ -12,6 +12,7 @@ import Firebase
 private let reuseIdentifier = "PichanguerosCell"
 
 class PichanguerosCollectionViewController: UICollectionViewController{
+    var pichanga : Pichanga?
     
     var pichangueros = [Pichanguero]()
 
@@ -23,7 +24,7 @@ class PichanguerosCollectionViewController: UICollectionViewController{
 
         // Register cell classes
         //self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        self.title = "Participantes"
         cargarData()
     }
 
@@ -78,7 +79,35 @@ class PichanguerosCollectionViewController: UICollectionViewController{
     }
     
     private func cargarData(){
-        let ref = Firebase(url:"https://pichangas.firebaseio.com/pichangueros")
+        // Obtenemos el listado de pichangueros
+        let ref = Firebase(url:"https://pichangas.firebaseio.com/")
+        ref.childByAppendingPath("pichangas/\(self.pichanga!.id)/pichangueros").observeEventType(.ChildAdded, withBlock:
+            {
+                snapshot in
+                let pichangueroKey = snapshot.key
+                
+                ref.childByAppendingPath("pichangueros/\(pichangueroKey)").observeSingleEventOfType(.Value,
+                    withBlock:
+                    {
+                        snapshot in
+
+                        let pichanguero = Pichanguero(
+                            id: snapshot.key,
+                            facebookId: snapshot.value["fbid"]!! as! String,
+                            nombrePichanguero: snapshot.value["nombre"]!! as! String,
+                            urlFoto: snapshot.value["foto"]!! as! String
+                        )
+                        
+                        self.pichangueros.append(pichanguero)
+                        self.collectionView?.reloadData()
+                        
+                    })
+                
+            })
+        
+       
+        
+        /*let ref = Firebase(url:"https://pichangas.firebaseio.com/pichangueros")
         ref.observeEventType(.Value, withBlock: { snapshot in
 
             for pic in snapshot.children{
@@ -96,7 +125,7 @@ class PichanguerosCollectionViewController: UICollectionViewController{
 
         }, withCancelBlock: { error in
             print(error.description)
-        })
+        })*/
     }
     
 

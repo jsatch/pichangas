@@ -15,6 +15,7 @@ class FechasViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var proxima : String?
     
     let cellIdentifier = "Cell"
+    let cellProximaIdentifier = "FechaProximaCell"
 
     @IBOutlet weak var tviFechas: UITableView!{
         didSet{
@@ -47,30 +48,37 @@ class FechasViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0{
-            return "Siguiente"
+            return "Próxima"
         }else{
             return "Pasadas"
         }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var celda = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
-        
-        if celda == nil {
-            celda = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
-        }
         if indexPath.section == 0{
-            celda!.textLabel!.text = self.proxima
+           let celdaProximo = tableView.dequeueReusableCellWithIdentifier(cellProximaIdentifier, forIndexPath: indexPath) as! FechasTableViewCell
+            
+            celdaProximo.labFecha.text = self.proxima
+            celdaProximo.switchAnotado.setOn(false, animated: false)
+            
+            return celdaProximo
         }else{
+            var celda = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+            
+            if celda == nil {
+                celda = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
+            }
             celda!.textLabel!.text = fechas[indexPath.row]
+
+            
+            return celda!
         }
-        
-        return celda!
+
     }
     
     private func cargarDatos(){
         let ref = Firebase(url:"https://pichangas.firebaseio.com/pichangas/\(pichanga!.id)/fechas")
-        
+        ref.queryOrderedByKey()
         ref.observeEventType(.Value, withBlock:{ snapshot in
             for fecha in snapshot.children{
                 print("Key: \(fecha.key!!)")
@@ -79,6 +87,12 @@ class FechasViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 //self.fechas.append(fecha.key!!)
                 if (fecha.value!! as! NSNumber).boolValue == true{
                     self.proxima = fecha.key!!
+                    
+                    let ref2 = Firebase(url:"https://pichangas.firebaseio.com/pichangueros/")
+                    ref2.observeEventType(.Value, withBlock:{ snapshot in
+                        
+                    })
+                    
                 }else{
                     self.fechas.append(fecha.key!! )
                 }

@@ -22,10 +22,31 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     }
     
+    func loginCorrecto(){
+        performSegueWithIdentifier("login", sender: self)
+    }
+    
+    func obtenerPichanguero(fbid : String){
+        let ref = Firebase(url:"https://pichangas.firebaseio.com/pichangueros")
+        ref.childByAppendingPath("/\(fbid)").observeSingleEventOfType(.Value, withBlock: {
+            snapshot in
+            
+            print("Pichanguero key:  \(snapshot.key)")
+            print("Pichanguero value:  \(snapshot.value)")
+            self.loginCorrecto()
+        })
+    }
+    
     override func viewDidAppear(animated: Bool) {
         if (FBSDKAccessToken.currentAccessToken() != nil){
             // Login correcto, deberiamos ir a un nuevo ViewController
-            performSegueWithIdentifier("login", sender: self)
+            FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields": "id, email"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+                if error == nil{
+                    print("RESULTADO: \(result["id"] as! String)")
+                    self.obtenerPichanguero(result["id"] as! String)
+                    
+                }
+            })
         }
     }
     

@@ -11,5 +11,9 @@ import Foundation
 class GlobalVars {
     static let sharedInstance = GlobalVars()
     
-    var idPichanguero : Int?
+    var pichanguero : Pichanguero?
+    
+    static func quitarQuotes(texto : String) -> String{
+        return texto.stringByReplacingOccurrencesOfString("\"", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+    }
 }

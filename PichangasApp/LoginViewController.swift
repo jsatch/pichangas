@@ -32,7 +32,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             snapshot in
             
             print("Pichanguero key:  \(snapshot.key)")
-            print("Pichanguero value:  \(snapshot.value)")
+            print("Pichanguero value:  \(snapshot.value["nombre"] as! String)")
+            let pichanguero = Pichanguero(
+                id: snapshot.key,
+                facebookId: snapshot.value["fbid"] as! String,
+                nombrePichanguero: snapshot.value["nombre"] as! String,
+                urlFoto: snapshot.value["foto"] as! String)
+            // Guardamos los datos globales del pichanguero
+            GlobalVars.sharedInstance.pichanguero = pichanguero
             self.loginCorrecto()
         })
     }

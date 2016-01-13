@@ -13,6 +13,7 @@ class FechasViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var fechas = [String]()
     var proxima : String?
+    var proximaAnotado : Int?
     
     let cellIdentifier = "Cell"
     let cellProximaIdentifier = "FechaProximaCell"
@@ -58,8 +59,16 @@ class FechasViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if indexPath.section == 0{
            let celdaProximo = tableView.dequeueReusableCellWithIdentifier(cellProximaIdentifier, forIndexPath: indexPath) as! FechasTableViewCell
             
-            celdaProximo.labFecha.text = self.proxima
-            celdaProximo.switchAnotado.setOn(false, animated: false)
+            if self.proxima != nil{
+                celdaProximo.labFecha.text = GlobalVars.quitarQuotes(self.proxima!)
+            }
+            
+            if self.proximaAnotado == 1{
+                celdaProximo.switchAnotado.setOn(true, animated: false)
+            }else{
+                celdaProximo.switchAnotado.setOn(false, animated: false)
+            }
+            
             
             return celdaProximo
         }else{
@@ -68,7 +77,7 @@ class FechasViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if celda == nil {
                 celda = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
             }
-            celda!.textLabel!.text = fechas[indexPath.row]
+            celda!.textLabel!.text = GlobalVars.quitarQuotes(fechas[indexPath.row])
 
             
             return celda!
@@ -87,18 +96,24 @@ class FechasViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 //self.fechas.append(fecha.key!!)
                 if (fecha.value!! as! NSNumber).boolValue == true{
                     self.proxima = fecha.key!!
-                    
-                    let ref2 = Firebase(url:"https://pichangas.firebaseio.com/pichangueros/")
-                    ref2.observeEventType(.Value, withBlock:{ snapshot in
-                        
-                    })
-                    
+
                 }else{
                     self.fechas.append(fecha.key!! )
                 }
             
             }
-            self.tviFechas.reloadData()
+            
+            let pichangueroId = GlobalVars.sharedInstance.pichanguero!.id
+            let pichangaFechaId = "\(GlobalVars.quitarQuotes(self.pichanga!.id))_\(GlobalVars.quitarQuotes(self.proxima!))"
+            
+            let ref2 = Firebase(url:"https://pichangas.firebaseio.com/pichangueros/\(pichangueroId)/pichangas/\(pichangaFechaId)")
+            ref2.observeEventType(.Value, withBlock:{ snapshot in
+                self.proximaAnotado = (snapshot.value as! Int)
+                self.tviFechas.reloadData()
+            })
+            
+            
+            
         })
     }
 
